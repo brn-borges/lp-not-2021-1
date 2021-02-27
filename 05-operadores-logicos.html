@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "Chato" do JavaScrpit
+        'use strict'
+        /*
+          Operadores Lógicos em JS
+          && -> E lógico (AND)
+          || -> OU lógico (OR)
+          ! -> NÂO lógico (NOT)
+        */
+        // Testanmdo o Operador &&
+        let a = 5, b = 10, c = 0
+        document.write(a > 1 && b < 15)
+        document.write('<br>') // <br> breaking row (quebra de linha)
+        document.write(b === 0 && c < 0)
+        document.write('<hr />') // <hr> horizontal ruler (traço horizontal)
+        if(a > 1 && b < 15){
+            document.write('A condição é Verdadeira')
+        } else {
+            document.write('A condição é Falsa')
+        }
+        document.write('<hr />')
+        // Testando o Operador ||
+        // != -> operador de diferença
+        // !== -> operador de diferença exata (Exatamente)
+        document.write(a === 5 || c !== 0) // != diferente
+        document.write('<hr />')
+        document.write(b != 10 || a !== 5)
+        document.write('<hr />')
+        // Testando o Operador ! (NOT)
+        document.write(!a === 0 && b > 20) // Ordem de resolução dos Operdores Lógicos 
+                                           //  1°: !
+                                           //  2°: &&
+                                           //  3°: ||
+                                           //  Essa ordem pode ser modificada com o uso de ()
+        document.write('<hr />')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
