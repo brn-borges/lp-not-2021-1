@@ -27,14 +27,35 @@
             2000: bissexto
             2013: não é
       */
-      let ano = parseInt(prompt('Insira um ano:'))
-      if(isNaN(ano)){
-            alert('Desculpe-me, mas isso que você informou não é ano.')
-      }else if (ano % 400 === 0 || (ano % 4 ===0 && ano % 100 !==0)){
-            alert('Este ano digitado é Bisseto')
+      let ano = parseInt(prompt('Insira um ano maior ou igual a 1582:'))
+      if(isNaN(ano) || ano < 1582){
+            alert('ERRO: o ano informado é inválido!')
+      }/*else if (ano % 400 === 0 || (ano % 4 ===0 && !(ano % 100 !==0))){
+          // Mensagem usando string template com interpolação de variável
+          alert(`ano ${ano} e bissexto.`)
+            //alert('Este ano digitado é Bisseto')
       }else {
-            alert('Este ano digitado não é Bisseto')
+            alert('Este ano digitado não é Bissexto')
+      }*/
+      // Ano divisível por 400 é sempre bissexto
+      else if(ano % 400 === 0){
+          //alert('O ano ' + ano + ' é bissexto')
+          alert(`O ano ${ano} e bissexto.`)
+          //  Se não, o ano pode ser ainda bissexto caso seja divisível por 4
+          // mas NÃoO seja divisível por 100
+          // Outra forma: else if(ano % 4 === 0 && ano % 100 !== 0)
+          // Outra forma: else if(ano % 4 === 0 && ano % 100 > 0)
+      } else if(ano % 4 === 0 && !(ano % 100 === 0)){ 
+            //alert('O ano ' + ano + ' é bissexto')
+            alert(`O ano ${ano} e bissexto.`)
+      } else {
+          //alert('O ano ' + ano + ' NÃO é bissexto')
+          alert(`O ano ${ano} NÃO e bissexto.`)
       }
+        // Outro exemplo de interpolação de variáveis em string template
+        //let a = 5, b = 4, c = 2
+        //alert('O valor de ' + a + ' somado com ' + b + ' somado com ' + c + ' é igual a ' + (a + b + c))
+        //alert(`O valor de ${​​a}​​ somado com ${​​b}​​ somado com ${​​c}​​ é igual a ${​​a + b + c}​​`)
     </script>
 </head>
 <body>
