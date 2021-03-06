@@ -28,7 +28,30 @@
         let op = prompt('Insira um operador: Ex:( + - * x X / :)')
         if (isNaN(n1) || (isNaN(n2))){
             document.write(`ERRO: Não são números valídos`)
-        } else if (op === '+'){
+        } else {
+            // switch.case é uma estrutura de decisão que compra uma única variável
+            // contra uma série de valores
+            switch(op){
+                case '+':
+                    document.write(`Resultado: ${n1} ${op} ${n2} = ${n1 + n2}`)
+                    break //Interrompe a execução do switch
+                case '-':
+                    document.write(`Resultado: ${n1} ${op} ${n2} = ${n1 - n2}`)
+                    break
+                case '*': // case vazio
+                case 'x': // case vazio
+                case 'X':
+                    document.write(`Resultado: ${n1} ${op} ${n2} = ${n1 * n2}`)
+                    break
+                case '/': // case vazio
+                case ':':
+                    document.write(`Resultado: ${n1} ${op} ${n2} = ${n1 / n2}`)
+                    break
+                default: // "else" do switch
+                    alert('ERRO: O operador informado é inválido!')
+            }
+        }
+        /*else if (op === '+'){
             document.write(`Resultado: ${n1} ${op} ${n2} = ${n1 + n2}`)
         } else if (op === '-'){
             document.write(`Resultado: ${n1} ${op} ${n2} = ${n1 - n2}`)
@@ -38,7 +61,8 @@
             document.write(`Resultado: ${n1} ${op} ${n2} = ${n1 / n2}`)
         } else {
             alert('ERRO: O operador informado é inválido!')
-        }
+        }*/
+
     </script>
 </head>
 <body>
