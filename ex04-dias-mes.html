@@ -24,48 +24,27 @@
         */
         let mes = parseInt(prompt('Informe um mês em números: (Mês: 1 ao 12)'))
 
-        if(isNaN(mes)){
-            alert(`ERRO: Não um número que foi o digitado!`)
+        if(isNaN(mes) || mes < 1 || mes > 12){
+            alert(`ERRO: Não é número de MÊS valido!`)
         } else {
             switch(mes){
-                case 1:
-                    document.write(`Mês ${mes} = Janeiro tem 31 dias!`)
+                case 1: // janeiro
+                case 3: // março
+                case 5: // maio
+                case 7: // julho
+                case 8: // agosto
+                case 10: // outubro
+                case 12: // dezembro
+                    alert(`Mês ${mes} tem 31 dias!`)
                     break
-                case 2:
-                    document.write(`Mês ${mes} = Fevereiro tem 28 ou 29 dias (em anos bissextos)!`)
-                    break
-                case 3: 
-                    document.write(`Mês ${mes} = Março tem 31 dias!`)
-                    break
-                case 4:
-                    document.write(`Mês ${mes} = Abril tem 30 dias!`)
-                    break
-                case 5:
-                    document.write(`Mês ${mes} = Maio tem 31 dias!`)
-                    break
-                case 6: 
-                    document.write(`Mês ${mes} = Junho tem 30 dias!`)
-                    break
-                case 7:
-                    document.write(`Mês ${mes} = Julho tem 31 dias!`)
-                    break
-                case 8:
-                    document.write(`Mês ${mes} = Agosto tem 31 dias!`)
-                    break
-                case 9:
-                    document.write(`Mês ${mes} = Setembro tem 30 dias!`)
-                    break
-                case 10 :
-                    document.write(`Mês ${mes} = Outubro tem 31 dias!`)
-                    break
-                case 11:
-                    document.write(`Mês ${mes} = Novembro tem 30 dias!`)
-                    break
-                case 12:
-                    document.write(`Mês ${mes} = Dezembro tem 31 dias!`)
+                case 4: // abril
+                case 6: // junho
+                case 9: // setembro
+                case 11: // novembro
+                   alert(`Mês ${mes} tem 30 dias!`)
                     break
                 default:
-                    alert(`ERRO: Não é número de MÊS valido!`)
+                    alert(`Mês ${mes} tem 28 ou 29 dias (em anos bissextos)!`)
             }
         }
     </script>

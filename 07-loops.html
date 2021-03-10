@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "Chato" do JavaScrpit
+        'use strict'
+        // Loops ou estruturas de repetição são recursos que toda liguagem de programação
+        // disponibiliza para que instruções possam ser executadas mais uma vez.
+        // 1) Loop While
+        // Pedir ao usúario que informe vários números na seuência e vamos somar
+        // até que ele informe o valor 0. Depois disso, vamos apresentar a soma.
+        let soma = 0, num
+        //Number tem o mesmo efeito que paserFloat
+        while(num !== 0){ 
+            num = Number(prompt('Informe um número para somar ou 0 para terminar:'))
+            if (! isNaN(num)){ // se for um número válido
+                soma += num // Equivale a: soma + num 
+            }
+        }
+        alert(`A soma dos números informados é ${soma}`)
+        // Características do Loop while
+        // 1) Quantidade de execuções: indeterminada
+        // 2) Garantia de execução: 0 vezes (não tem garantia)
+        // 3) Local de teste: no início
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
