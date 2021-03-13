@@ -26,7 +26,24 @@
             de atendimento ao usuário da AUTOBURACON S/A.
 
         */
-
+        let km, po, pe, c
+        do {
+            km = parseInt(prompt('Informe o comprimento da rodovia:'))
+            if(! isNaN(km) && km > 200){ 
+                c = 0
+                while(c <= km){
+                    c++
+                    if (c % 31 == 0){
+                        pe = c
+                        document.write(`Pédagio: ${pe} <br>`)
+                    }
+                    if (c % 23 == 0){
+                        po = c
+                        document.write(`Posto de Usuário: ${po} <br>`)
+                    }
+                }
+            }       
+        } while (isNaN(km) || (km <= 200))
     </script>
 </head>
 <body>
