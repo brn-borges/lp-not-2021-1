@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "Chato" do JavaScrpit
+        'use strict'
+        // 2)DO..WHILE
+        // Pedir ao usúario que informe vários números na seuência e vamos somar
+        // até que ele informe o valor 0. Depois disso, vamos apresentar a soma.
+        let soma = 0, num
+        do{
+            num = Number(prompt('Informe um número para somar ou 0 paraa terminar:'))
+            if(! isNaN(num)){
+                soma += num
+            }
+        } while(num !== 0)
+        alert(`A soma dos números informados é ${soma}`)
+        // Características do Loop while
+        // 1) Quantidade de execuções: indeterminada (1+)
+        // 2) Garantia de execução: 1 vez
+        // 3) Local de teste: no final
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
