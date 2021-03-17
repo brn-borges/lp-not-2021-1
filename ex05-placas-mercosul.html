@@ -40,7 +40,7 @@
             a letra correspondente ao dígito informado.
 
         */
-        let digito
+        /*let digito
         do{
             digito = Number(prompt('Informe o segundo digito da placa do mercosul:'))
             if(! isNaN(digito)){
@@ -78,6 +78,45 @@
                 }
             }
         } while(isNaN(digito) || (digito < 0 || digito > 9))
+        */
+       let num
+       // repete a pergunta a usuário enquanto ele não informar um número válido
+       // que esteja na faixa entre 0 a 9
+       do {
+           num = parseInt(prompt('Informe um dígito de 0 a 9'))
+       } while (isNaN(num) || num < 0 || num > 9)
+       switch(num){
+           case 0:
+               alert('A é letra corresponde ao dígito')
+               break
+            case 1:
+               alert('B é letra corresponde ao dígito')
+               break
+            case 2:
+               alert('C é letra corresponde ao dígito')
+               break
+            case 3:
+               alert('D é letra corresponde ao dígito')
+               break 
+            case 4:
+               alert('E é letra corresponde ao dígito')
+               break 
+            case 5:
+               alert('F é letra corresponde ao dígito')
+               break
+            case 6:
+               alert('G é letra corresponde ao dígito')
+               break  
+            case 7:
+               alert('H é letra corresponde ao dígito')
+               break
+            case 8:
+               alert('I é letra corresponde ao dígito')
+               break 
+            case 9:
+               alert('J é letra corresponde ao dígito')
+               break      
+       }
     </script>
 </head>
 <body>
