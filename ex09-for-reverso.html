@@ -21,6 +21,14 @@
             5! = 5 * 4 * 3 * 2 * 1
             7! = 7 * 6 * 5 * 4 * 3 * 2 * 1         
         */
+       let fator, multi = 1
+       do {
+           fator = parseInt(prompt('Insira um número maior que 1:'))
+       } while(isNaN(fator) || fator <= 1)
+       for(let i = fator; fator >= i; i--){
+           multi *=  i
+           document.write(i)
+       }
 
     </script>
 </head>

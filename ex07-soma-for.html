@@ -20,7 +20,7 @@
             Utilizando um loop for, calcule a somatória de todos os números entre 
             os dois valores informados (inclusive).            
         */
-        let num1, num2, maior, menor, i
+        let num1, num2, maior, menor, i, soma = 0
         do {
             num1 = parseInt(prompt('Informe o primeiro número:'))
             num2 = parseInt(prompt('Informe o segundo número:'))
@@ -33,9 +33,9 @@
             menor = num2
         }
         for(i = menor; i <= maior; i++){
-            i += menor
+            soma += i
         }
-        document.write("Resultado da somatória:" + (i - 1 + menor))
+        document.write("Resultado da somatória: " + (soma + maior))
     </script>
 </head>
 <body>
