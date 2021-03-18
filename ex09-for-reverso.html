@@ -9,7 +9,7 @@
         // sem o uso de let, var ou const
         // Inicializar variáveis diretamente é má prática de
         // programação
-        'use strict'
+        'use strict
         
         /*
             Peça ao usuário que informe um número inteiro maior que 1 e
@@ -25,10 +25,11 @@
        do {
            fator = parseInt(prompt('Insira um número maior que 1:'))
        } while(isNaN(fator) || fator <= 1)
-       for(let i = fator; fator >= i; i--){
+       for(let i = fator; i >= 1; i--){
            multi *=  i
-           document.write(i)
+           document.write(i + '! ')
        }
+       document.write(' : ' + multi)
 
     </script>
 </head>
