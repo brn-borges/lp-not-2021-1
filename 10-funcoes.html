@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "Chato" do JavaScrpit
+        'use strict'
+         //5! = 5 * 4 * 3 * 2 * 1 (120)
+         /*let fat5 = 1
+         for(let i = 5; i > 1; i--){
+             fat5 = fat5 * i
+         }   
+         alert("O fatorial de 5 é " + fat5) */
+         // Princípio DRY = Don't repeat yourself (não se repita)
+         // Função é um trecho de código que é escrito apenas uma vez e 
+         // pode ser invocado (executado) várias vezes
+         // fatorial -> nome da função
+         // num -> parâmetro ou argumento da função
+         function fatorial (num){ // Declaração da função
+            let fat = 1
+            for (let i = num; i > 1; i--){
+                fat *= i // Equivale a: fat = fat * i
+            }
+            return fat // Retorno da função
+         }
+         let x = fatorial(5) // Chamada de função. O vaçor retornado pela função será
+                             // atribuído variável x.
+         alert('O fatorial de  5 calculado pela função é ' + x)
+         // Função para calcular a área de uma das seguintes formas geométricas:
+         // quadriláteros, triângulos e de elispes
+         function calcArea (base, altura, forma){
+            let area
+            switch(forma){
+                case 'Q': // Quadriláteros
+                    area = base * altura
+                    break
+                case 'T': //Triangulo
+                    area = base * altura / 2
+                    break
+                case 'E': // Elipse
+                    area = (base / 2) * (altura * 2) * Math.PI
+                    break
+                default: // Formas invalidas
+                    area = NaN // Area invalida
+            }
+            return area
+         }
+         let areaTerreno = calcArea(8, 25 , 'Q') // Chamada da função
+         alert('Área do terreno: ' + areaTerreno)
+         // Chamada de função direto dentro do alert
+         alert('Área do Triangulo: ' + calcArea(7, 5, "T"))
+         alert('Área da elipse: ' + calcArea(2, 3, 'E'))
+         alert('Área de uma forma não suporta: ' + calcArea(2, 3, 'W'))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
