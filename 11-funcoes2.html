@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "Chato" do JavaScrpit
+        'use strict'
+        /******************************************************************************
+         * Função Sem Retorno
+         * 
+         * Geralmente, funções retornam um valor para quem as chama
+         * por meio da palavra-chave return. No entanto, existem funções
+         * que apenas desempenham uma tarefa, sem retornar valor algum
+         * *****************************************************************************
+         */    
+        function traco(tamanho){
+            for (let i = 1; i <= tamanho; i++){
+                document.write('-')
+            }
+            document.write('<br>') // Pula linha
+            // Note que, nesta função, não há palavra-chave retutn
+        }
+        // Chamadas da função. Note também que a fonção Não é atribuida a uma variavel
+        traco(25)
+        traco(50)
+        traco(15)
+        /**********************************************************************
+         * Função Sem Parâmetro
+         * 
+         * Uma função(independentemente se retorna ou não algum valor) pode
+         * não receber parâmetro algum. Nesse caso, ficam os parênteses vazios
+         * à frente do nome da função
+         * *********************************************************************/
+        function agora(){ // Retorna a hora atual do computador
+            let diaAtual = new Date
+            return diaAtual.getHours() + ':' + diaAtual.getMinutes() + ':' + diaAtual.getSeconds()
+        }
+        // Chama a função e mostra o resultado em um alert()
+        alert(agora())
+        function msgError(){
+            alert('ERRO INESPERADO. Contate o suporte técnico pelo ramal XXX')
+        }
+        msgError() // Chamada da função
+        /****************************************
+         * Funções Determinísticas X Funções Não-Determinístcas
+         * 
+         * Função Deterministicas -> dados os mesmos argumentos, retornará sempre
+         * o mesmo resultado
+         * 
+         * Função Não-Derterministica -> o valor de retorno independe do(s) parametro(s)
+         * ***************************************/
+        // Exemplo de função deterministica
+        function potencia(base, exponte){
+            return base ** exponte
+        }
+        alert(potencia(2, 5))  // 32, sempre
+        alert(potencia(3, 3))  // 27, sempre
+        // A função agora (), declarada mais acima, é um exemplo de função não-deterministica
+        // A cada execução, retornará um resultado diferente
+        // Um exemplo de função não-deterministica fornecida pelo proprio JavaScript é a
+        // Math.randow() . A cada execução, ela retornará um número diferente, na faixa entre 0 e 1.
+        alert('Numero aletorio: ' + Math.random())
+        alert('Numero aletorio: ' + Math.random())
+        // Função não-deterministica que gera um numero aleatorio inteiro entre 1 e 60.
+        function megasena(){
+            // Os numeros gerados por Math.randow() incluem o numero 0, mas não incluem o numero 1.
+            // Portanto, ao multiplicar por 60, conseguimos numeros entre 0 e 59.
+            // Para corrigir esse problema, adicionamos 1 ao resultado
+            // Para retirar as casas decimais, usamos a função Math.floor()
+            return Math.floor(Math.random() * 60 + 1)
+        }
+        // Eventualmente, podem sair numeros repetidos
+        /*alert('1º Numero para a megasena: ' + megasena())
+        alert('2º Numero para a megasena: ' + megasena())
+        alert('3º Numero para a megasena: ' + megasena())
+        alert('4º Numero para a megasena: ' + megasena())
+        alert('5º Numero para a megasena: ' + megasena())
+        alert('6º Numero para a megasena: ' + megasena())
+        */
+        for (let i = 1; i <=6; i++){
+            alert( i + 'º número para a megasena: ' + megasena())
+        }
+        /****
+         * Função com Paramentro Opcional
+         * 
+         * O(s) último(s) parametros de um função podem ser transformados em 
+         * parametros opcionais, caso se forneça um valor padrao a ser utilizado
+         * nesse caso de esse(s) parametro(s) nao ter(em) sido passado(s).
+         ****/
+         // O parametro forma foi transformado em opcional
+         function calcArea (base, altura, forma =  'Q'){
+            let area
+            switch(forma){
+                case 'Q': // Quadriláteros
+                    area = base * altura
+                    break
+                case 'T': //Triangulo
+                    area = base * altura / 2
+                    break
+                case 'E': // Elipse
+                    area = (base / 2) * (altura * 2) * Math.PI
+                    break
+                default: // Formas invalidas
+                    area = NaN // Area invalida
+            }
+            return area
+         }
+         let areaTriangulo = calcArea(10, 7, 'T')
+         let areaElispe = calcArea(6, 4, 'E')
+         let areaQuadro1 = calcArea(8, 2.5, 'Q')
+         // Note que, na chamada a seguir, não será passado o ultimo
+         // parametro. Neste caso, será calculdada a area de um quadrilatero
+         // pois o valor padrao do parametro opcional e 'Q'.
+         let areaQuadro2 = calcArea(5, 9)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
