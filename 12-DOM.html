@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Modelo</title>
+    
+</head>
+<body>
+    <h1>Document Object Model (DOM)</h1>
+    <p>O <em>Document Object Model</em> (Modelo de Objeto do Documento) é a 
+        estrutura da página HTML tal como vista pelo JavaScript.</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <ol>
+        <li id="bra">Brasil</li>
+        <li id="arg">Argentina</li>
+        <li id="uru">Uruguai</li>
+        <li id="par">Paraguai</li>
+        <li id="bol">Bolivia</li>
+        <li id="chi">Chile</li>
+    </ol>
+    <script>
+        /*
+            Quando vamos manipular o DOM (os elementos da página HTML) via JS, e a seção
+            <script> precisa ser realocada para logo antes da tag </body>.
+        */
+        // Ativa verificações adicionais de variáveis
+        // Modo "Chato" do JavaScrpit
+        'use strict'
+         /* Mudar o texto do elemento H1*/     
+         // 1) Capturar o elmento HTML
+         const elementoH1 = document.querySelector('h1')
+         // 2) Mudando algumas caracteristicas do documento
+         elementoH1.textContent = 'Novo título da página'
+         elementoH1.style.color = 'blue'
+         /* Mudar algumas caracteristicas do paragrafo <p>*/
+        const elementoP = document.querySelector('p')
+        elementoP.style.textAlign = 'center'
+        elementoP.style.fontWeight = 'bold'
+        /* Mudar a caracteristica de um <li> */
+        const elementoLi = document.querySelector('li')
+        elementoLi.style.backgroundColor = 'yellow'
+        elementoLi.style.fontStyle = 'italic'
+        /* 
+            document.querySelector('nometag') ira capturar sempre o PRIMEIRO
+            elemento do tipo 'nometag'.
+        */
+       /* Captura todos os elementos <li>
+        document.querySelectorAll('nometag') ira capturar TODOS os elementos
+        do tipo 'nometag' e colocá-los dentro de um vetor. O primeiro elementos
+        do vetor ten indice 0.*/
+        const todosLi = document.querySelectorAll('li')
+        todosLi[0].style.color = 'red'
+        todosLi[1].style.color = 'green'
+        todosLi[2].style.color = 'orange'
+        todosLi[6].style.textDecoration = 'underline'
+        /* Capturando um elemento por id. Existem duas formas */
+        // Forma 1 (mais antiga)
+        const itemArgentina = document.getElementById('arg')
+        itemArgentina.style.color = 'royalblue'
+        // Forma 2 (mais recente)
+        /* IMMPORTANTE! Ao usar document.querySelector() para capturar POR ID,
+        este deve ser passado com uma # no início */
+        const itemBolivia = document.querySelector('#bol')
+        itemBolivia.style.color = 'seagreen'
+
+    </script>
+</body>
+</html>
