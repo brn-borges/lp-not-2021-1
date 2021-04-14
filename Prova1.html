@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "Chato" do JavaScrpit
+        'use strict'
+        
+        function quilometro(){
+        for(let km = 400; km >= 1; km--){
+            if(km % 50 === 0){
+                document.write('Posto de embarque e desembarque: ' + km +' km<br>')
+            }
+        }
+        }
+        let km
+        do{
+          km = parseInt(prompt('Insira valor do KM: (De 1 a 400Km)'))
+        } while (isNaN(km)|| (km < 1 || km > 400))
+        switch(km){
+            case 98:
+            case 190:
+            case 283:
+            case 379:
+                alert('Postos de conveniência da Rede Mil Grau ' + km + ' km')
+                break
+            case 155:
+            case 355:
+                alert('Postos da Polícia Ferroviária ' + km + ' km')
+                break
+            case 137:
+                alert('Aeroporto Interplanetário de Virapratos ' + km + ' km')
+                break
+            case 204:
+                alert('Hotel Cacique Internacional 6 estrelas ' + km + ' km')
+                break
+            case 311:
+                alert('Boleli shopping center ' + km + ' km')
+                break
+            case 356:
+                alert('Acesso ao Acqua Park Unidade III ' + km + ' km')
+                break
+            default:
+                alert('Nada aqui no ' + km + ' km')       
+        }
+        quilometro()
+    </script>
+</head>
+<body>
+     
+</body>
+</html>
