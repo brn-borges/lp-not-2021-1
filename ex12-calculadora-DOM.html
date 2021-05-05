@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora DOM</title>
+    
 </head>
 <body>
     <h1>Calculadora DOM</h1>
+
     <div>
         <label for="num1">Primeiro número</label>
-        <input type="number" id="num1">
+        <input id="num1" type="number">
     </div>
+
     <div>
         <label for="oper">Operação</label>
         <select id="oper">
@@ -21,80 +24,90 @@
             <option>Divisão (/)</option>
         </select>
     </div>
+
     <div>
         <label for="num2">Segundo número</label>
-        <input type="number" id="num2">
+        <input id="num2" type="number">
     </div>
+
     <div>
         <button id="calcular">Calcular</button>
     </div>
-    <div id="resultado">
 
-    </div>
+    <div id="resultado"></div>
+
     <script>
         // Ativa verificações adicionais de variáveis
-        // Modo "Chato" do JavaScrpit
+        // Modo "chato" do JavaScript
         'use strict'
-        let n1 = document.getElementById('num1')
-        let n2 = document.getElementById('num2')   
-        let oper = document.getElementById('oper')
-        let calc = document.getElementById('calcular')
-        let res = document.getElementById('resultado')
-        function validar(){
-            let num1 = Number(n1.value)
-            let num2 = Number(n2.value)
-            if(isNaN(num1) || num1 == '') {
+
+        // 1) Capturar os elementos HTML
+        const elNum1 = document.getElementById('num1')
+        const elOper = document.getElementById('oper')
+        const elNum2 = document.getElementById('num2')
+        const elCalcular = document.querySelector('#calcular')
+        const elResultado = document.querySelector('#resultado')
+
+        // Variáveis que conterão os valores a ser processados
+        let num1, num2
+
+        // 2) Declarar a função de validação do formulário
+        function validar() {
+
+            num1 = parseFloat(elNum1.value)
+            //num1 = Number(elNum1.value)
+            num2 = parseFloat(elNum2.value)
+
+            if(isNaN(num1)) {
                 alert('Informe o primeiro número.')
-                n1.focus()
+                elNum1.focus()
                 return false
             }
-            if(isNaN(num2) || num2 == '') {
+
+            if(elOper.selectedIndex === 0) {
+                alert('Selecione uma operação válida.')
+                elOper.focus()
+                return false   
+            }
+
+            if(isNaN(num2)) {
                 alert('Informe o segundo número.')
-                n2.focus()
+                elNum2.focus()
                 return false
             }
-            if (oper.selectedIndex === 0){
-                alert('Selecione uma Operação valida.')
-                oper.focus()
-                return false
-            }
+
             return true
+
         }
-        function calculo(n1,n2,op){
-            let num1 = Number(n1.value)
-            let num2 = Number(n2.value)
-            let res = 0
-            if (oper.selectedIndex === 1){
-                res = num1 + num2   
-            } else if (oper.selectedIndex === 2){
-                res = num1 - num2 
-            } else if (oper.selectedIndex === 3){
-                res = num1 * num2 
-            } else {
-                res = num1 / num2
-            }
-            return res
-        }
-        function operacao(op){
-            if (oper.selectedIndex === 1){
-                op = "+"
-            } else if (oper.selectedIndex === 2){
-                op = "-"
-            } else if (oper.selectedIndex === 3){
-                op = "*"
-            } else {
-                op = "/"
-            }
-            return op
-        }
-        function exbirMensagem(){
-            if (validar()){
-                let op = operacao(oper)
-                let result=calculo(n1,n2,oper)
-                res.textContent = `O primeiro número é ${n1.value} e a operação ${op} e o segundo número ${n2.value} e o resulatdo: ${result} `
+
+        // 3) Declarar a função que faz o cálculo, de acordo
+        // com a operação escolhida pelo usuário. Dentro desta
+        // função, deve ser ser chamada a função de validação
+        function calcular() {
+            if(validar()) {
+                let resultado
+                switch(elOper.selectedIndex) {
+                    case 1:     // soma
+                        resultado = num1 + num2
+                        break
+                    case 2:     // subtração
+                        resultado = num1 - num2
+                        break
+                    case 3:     // multiplicação
+                        resultado = num1 * num2
+                        break
+                    default:    // divisão
+                        resultado = num1 / num2    
+                }
+                // Exibe o resultado na div resultado
+                elResultado.textContent = resultado
             }
         }
-        calc.addEventListener('click', exbirMensagem)
+
+        // 4) Associar a função que faz o cálculo ao evento
+        // 'click' do botão
+        elCalcular.addEventListener('click', calcular)
+        
     </script>
 </body>
 </html>
