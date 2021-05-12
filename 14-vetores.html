@@ -164,16 +164,51 @@
         // PERCURSO DE VETOR: significa visitar cada um dos elementos
         // para fazer algo com ele
         document.write('<hr>')  // Traço horizontal
+
+        // 1º forma: usando um FOR TRADICIONAL
         for(let i = 0; i < carros.length; i++) {
             // Escrevendo os nomes de cada carro EM MAIÚSCULAS, 
             // um por linha
             document.write(carros[i].toUpperCase() + '<br>')
         }
 
+        document.write('<hr>')
 
+        //2º forma: usando um FOR TRADICIONAL em ordem reversa
+        for(let i = carros.length - 1; i >= 0; i--){
+            document.write(carros[i].toLowerCase() + '<br>')
+        } 
 
+        document.write('<hr>')
 
-        
+        //3º forma: usando FOR..OF
+        // FOR..OF é uma sintaxe simplificada que permite percorrer
+        // TODO O VETOR na ordem CRESCENTE de posições
+        for(let elemento of carros){
+            // nesse caso: 
+            // elemento -> é uma variavel que recebera cada
+            // elemento do vetor que esta sendo percorrido
+            // carros -> é o vetor que está sendo percorrido
+            // for..of calcula automaticamente quantas vezes
+            // será feita a repetição para percorrer todos
+            // elementos
+            document.write(elemento + '<br>')
+        }
+
+        document.write('<hr>')
+
+        // Determinando a posição de um elemento dentro do vetor
+        let pos = carros.indexOf('Marea')
+        document.write(`Posição do Marea no vetor: ${pos}<br>`)
+        pos = carros.indexOf('Gol')
+        document.write(`Posição do Gol no Vetor: ${pos}<br>`)
+        pos = carros.indexOf('Santana')
+        document.write(`Posição do Santana no Vetor: ${pos}<br>`)
+
+        // Determinando se um elemento existe ou nao no vetor: includes()
+        let existe = carros.includes('Tempra')
+        document.write(`Tempara existe em carros? ${existe} <br>`)
+        document.write(`Marajo existe em carros? ${carros.includes('Marajo')} <br>`)
     </script>
 </head>
 <body>
