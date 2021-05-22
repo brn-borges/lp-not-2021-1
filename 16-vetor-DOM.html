@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora com registros</title>
+    <style>
+        *{
+            font-family: Calibri, Arial, sans-serif;
+        }
+        #fita{
+          background-color: khaki;  
+          text-align: right;
+          font-size: 20px;
+          width: 250px;
+          padding: 20px;
+          margin: 30px auto 0 auto;
+          /*4 valores no margin 
+           1 top 
+           2 right
+           3 bottom
+           4 left
+           começa de cima e segue o sentido horario
+           quando temos  auto a esquerda e a direta, o
+           elemento fica centraliza na horizontal
+           */
+           box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+           /* 
+           valores do box-shadow:
+           1 deslocamento horizontal
+           2 deslocamento vertical
+           3 embaçamento da sombra
+           4 cor da sombra
+           */
+        }
+        #fita p{
+             font-family: Consolas, "Courier New", monospace; 
+        }
+        #total{
+            font-weight: bold;
+        }
+    </style>
+<body>
+    <h1>Calculadora com registro</h1>
+    <label for="num">Número:</label>
+    <input type="number" id="num" value="0">
+    <button id="limpar">Limpar</button>
+    <div id="fita">
+        <hr>
+        <p id="total">0</p>
+    </div>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "Chato" do JavaScrpit
+        'use strict'
+
+        // Captura dos elementos
+         const elNum = document.querySelector('#num')
+         const elLimpar = document.querySelector('#limpar')   
+         const elFita = document.querySelector('#fita')
+         const elTraco = document.querySelector('hr')
+         const elTotal = document.querySelector('#total')
+
+         // Vetor de numeros
+         const numeros = []
+    </script>
+</body>
+</html>
